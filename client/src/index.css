@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HIGH CONTRAST LIGHT MODE - Event Ticketing SaaS */
+:root {
+  --button-outline: rgba(0,0,0, .12);
+  --badge-outline: rgba(0,0,0, .08);
+  --opaque-button-border-intensity: -10;
+  --elevate-1: rgba(0,0,0, .04);
+  --elevate-2: rgba(0,0,0, .10);
+  
+  /* High contrast background - pure white */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 4%;
+  
+  /* Borders with more contrast */
+  --border: 0 0% 85%;
+  
+  /* Cards slightly elevated from background */
+  --card: 0 0% 99%;
+  --card-foreground: 0 0% 4%;
+  --card-border: 0 0% 88%;
+  
+  /* Sidebar - subtle contrast */
+  --sidebar: 220 20% 97%;
+  --sidebar-foreground: 0 0% 4%;
+  --sidebar-border: 220 10% 90%;
+  --sidebar-primary: 220 90% 45%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 15% 92%;
+  --sidebar-accent-foreground: 0 0% 4%;
+  --sidebar-ring: 220 90% 45%;
+  
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 4%;
+  --popover-border: 0 0% 88%;
+  
+  /* Primary - deep blue for high contrast CTAs */
+  --primary: 220 90% 40%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary */
+  --secondary: 220 10% 92%;
+  --secondary-foreground: 0 0% 9%;
+  
+  /* Muted text */
+  --muted: 220 10% 94%;
+  --muted-foreground: 220 5% 40%;
+  
+  /* Accent - blue tinted */
+  --accent: 220 20% 94%;
+  --accent-foreground: 220 90% 30%;
+  
+  /* Destructive - high contrast red */
+  --destructive: 0 84% 45%;
+  --destructive-foreground: 0 0% 100%;
+  
+  /* Success - for confirmed tickets */
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 100%;
+  
+  /* Warning - for pending states */
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 4%;
+  
+  /* Info - for scanned tickets */
+  --info: 199 89% 48%;
+  --info-foreground: 0 0% 100%;
+  
+  --input: 0 0% 70%;
+  --ring: 220 90% 45%;
+  
+  /* Charts - vibrant colors */
+  --chart-1: 220 90% 50%;
+  --chart-2: 142 76% 42%;
+  --chart-3: 262 83% 50%;
+  --chart-4: 32 95% 50%;
+  --chart-5: 340 82% 50%;
+  
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Manrope', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius: .5rem;
+  
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.04);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.06), 0px 1px 2px -1px hsl(0 0% 0% / 0.04);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.08), 0px 2px 4px -2px hsl(0 0% 0% / 0.04);
+  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.08), 0px 3px 6px -3px hsl(0 0% 0% / 0.04);
+  --shadow-lg: 0px 10px 20px -3px hsl(0 0% 0% / 0.10), 0px 4px 8px -4px hsl(0 0% 0% / 0.04);
+  --shadow-xl: 0px 20px 40px -4px hsl(0 0% 0% / 0.12), 0px 8px 16px -5px hsl(0 0% 0% / 0.04);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.25);
+  
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+/* HIGH CONTRAST DARK MODE */
+.dark {
+  --button-outline: rgba(255,255,255, .12);
+  --badge-outline: rgba(255,255,255, .08);
+  --opaque-button-border-intensity: 12;
+  --elevate-1: rgba(255,255,255, .05);
+  --elevate-2: rgba(255,255,255, .12);
+  
+  /* Deep dark background */
+  --background: 220 15% 6%;
+  --foreground: 0 0% 98%;
+  
+  --border: 220 10% 18%;
+  
+  --card: 220 15% 8%;
+  --card-foreground: 0 0% 98%;
+  --card-border: 220 10% 14%;
+  
+  --sidebar: 220 15% 9%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-border: 220 10% 15%;
+  --sidebar-primary: 220 90% 55%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 15% 16%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-ring: 220 90% 55%;
+  
+  --popover: 220 15% 10%;
+  --popover-foreground: 0 0% 98%;
+  --popover-border: 220 10% 18%;
+  
+  --primary: 220 90% 55%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 220 10% 18%;
+  --secondary-foreground: 0 0% 98%;
+  
+  --muted: 220 10% 15%;
+  --muted-foreground: 220 5% 65%;
+  
+  --accent: 220 20% 18%;
+  --accent-foreground: 220 80% 70%;
+  
+  --destructive: 0 84% 55%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --success: 142 76% 48%;
+  --success-foreground: 0 0% 100%;
+  
+  --warning: 38 92% 55%;
+  --warning-foreground: 0 0% 4%;
+  
+  --info: 199 89% 55%;
+  --info-foreground: 0 0% 100%;
+  
+  --input: 220 10% 30%;
+  --ring: 220 90% 55%;
+  
+  --chart-1: 220 90% 65%;
+  --chart-2: 142 76% 55%;
+  --chart-3: 262 83% 65%;
+  --chart-4: 32 95% 60%;
+  --chart-5: 340 82% 60%;
+  
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.20);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.25);
+  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.30), 0px 1px 2px -1px hsl(0 0% 0% / 0.20);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.35), 0px 2px 4px -2px hsl(0 0% 0% / 0.20);
+  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.40), 0px 3px 6px -3px hsl(0 0% 0% / 0.25);
+  --shadow-lg: 0px 10px 20px -3px hsl(0 0% 0% / 0.45), 0px 4px 8px -4px hsl(0 0% 0% / 0.25);
+  --shadow-xl: 0px 20px 40px -4px hsl(0 0% 0% / 0.50), 0px 8px 16px -5px hsl(0 0% 0% / 0.25);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.60);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* High contrast text hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Hide ugly search cancel button in Chrome */
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after {
+    inset: -1px;
+  }
+  
+  /* QR Code scan overlay animation */
+  @keyframes scan-line {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+  }
+  
+  .animate-scan-line {
+    animation: scan-line 2s ease-in-out infinite;
+  }
+  
+  /* Pulse animation for scan feedback */
+  @keyframes success-pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .animate-success-pulse {
+    animation: success-pulse 0.3s ease-out;
+  }
+  
+  /* Gradient text utility */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-foreground;
+  }
+  
+  /* Glass morphism for overlays on images */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+  
+  .glass-dark {
+    @apply bg-black/60 backdrop-blur-md;
+  }
+}
